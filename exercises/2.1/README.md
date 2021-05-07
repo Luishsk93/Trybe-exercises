@@ -1,1 +1,1 @@
-What it is and what it is for
+Git & GitHub - What it is and it is for
