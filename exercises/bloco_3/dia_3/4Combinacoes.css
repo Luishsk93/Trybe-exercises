@@ -27,30 +27,31 @@ li.primo{
 li{
     font-size: 20px;
 }
-li.italico{
+li.italico {
     font-weight: bold;
 }
+
 .top3languages{
     color: blue;
 }
-.top3languages.Java{
+.Java{
     background-color: pink;
 }
-.bestallies:hover{
+ul:last-of-type a:hover{
     font-weight: bold;
 }
-a.stackoverflow:hover{
+ul:last-of-type li:nth-child(1) a:hover{
     color: orange;
 }
-a.w3schools:hover{
+ul:last-of-type li:nth-child(2) a:hover{
     color: green;
 }
-a.MDN:hover{
+ul:last-of-type li:nth-child(3) a:hover{
     color: black;
 }
-a.devdocs:hover{
+ul:last-of-type li:nth-child(4) a:hover{
     color: yellow;
 }
-a.Trybe:hover{
+ul:last-of-type li:nth-child(5) a:hover{
     color: green;
 }
