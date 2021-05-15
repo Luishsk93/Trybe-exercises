@@ -1,0 +1,34 @@
+div:hover{
+    border-style: solid;
+}
+#Primaria{
+    color:blue;
+}
+#Primaria h3{
+    font-style: italic;
+}
+#Secundaria{
+    color: orange;
+}
+#Secundaria h3{
+    font-style: normal;
+}
+#Complementar{
+    color: red;
+    font-size: 2em;
+}
+#Complementar h3{
+    font-style: italic;
+}
+#Escura{
+    color: black;
+}
+#Escura h3{
+    font-style: inherit;
+}
+#Clara{
+    color: aquamarine;
+}
+#Clara h3{
+    font-style: italic;
+}
