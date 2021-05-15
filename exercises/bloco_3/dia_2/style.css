@@ -1,0 +1,37 @@
+<style>
+h1{
+    font-size: 65px;
+    color: orange;
+    font-family: sans-serif;
+}
+
+#colorlist{
+    background-color: bisque;
+}
+
+.pandlist{
+    background-color: blueviolet;
+    line-height: 50px;
+    text-align: justify;
+    text-decoration: underline;
+}
+p{
+    font-weight: 600;
+    font-size: 3em;
+}
+
+body{
+    font-size: 16px;
+    font-style: oblique;
+}
+
+#yellow{
+    background-color: yellow;
+}
+#red{
+    background-color: red;
+}
+#brown{
+    background-color: brown;
+}
+</style>
