@@ -6,7 +6,7 @@
 
 function verificaPalindrome(palavra){
     let palavraInvertida = "";
-    for (i = palavra.length - 1; i >= 0; i -= 1){
+    for (let i = palavra.length - 1; i >= 0; i -= 1){
         palavraInvertida = palavraInvertida + palavra[i];
     }
 
@@ -23,3 +23,18 @@ console.log(verificaPalindrome('desenvolvimento'));
 console.log('\n');
 
 // 2. Crie uma função que receba um array de inteiros e retorne o índice do maior valor.
+
+function indiceDoMaior(lista){
+    let maior = -Infinity;
+    let maiorIndice = Infinity;
+    for (let i = 0; i < lista.length - 1; i += 1){
+        if (lista[i] > maior){
+            maiorIndice = i;
+        }
+  }
+  console.log(maiorIndice);
+}
+
+indiceDoMaior([2, 3, 6, 7, 10, 1]);
+
+console.log('\n');
