@@ -19,5 +19,5 @@ console.log(info);
 // Faça um for/in que mostre todas as chaves do objeto.
 
 for (key in info){
-  console.log(info[key]);
+  console.log(key);
 }
