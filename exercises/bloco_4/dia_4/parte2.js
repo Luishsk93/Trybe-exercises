@@ -55,3 +55,20 @@ function indiceDoMenor(lista){
 indiceDoMenor([2, 4, 6, 7, 10, 0, -3]);
 
 console.log('\n');
+
+// 4. Crie uma função que receba um array de nomes e retorne o nome com a maior quantidade de caracteres.
+
+function maiorQtdeCaracteres(lista){
+    maior = "";
+    for (nome of lista){
+        if (nome.length > maior.length){
+            maior = nome;
+        }
+    }
+
+    console.log(maior);
+}
+
+maiorQtdeCaracteres(['José', 'Lucas', 'Nádia', 'Fernanda', 'Cairo', 'Joana']);
+
+console.log('\n');
