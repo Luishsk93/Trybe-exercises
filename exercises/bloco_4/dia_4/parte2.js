@@ -27,7 +27,7 @@ console.log('\n');
 function indiceDoMaior(lista){
     let maior = -Infinity;
     let maiorIndice = Infinity;
-    for (let i = 0; i < lista.length - 1; i += 1){
+    for (let i = 0; i < lista.length; i += 1){
         if (lista[i] > maior){
             maiorIndice = i;
         }
@@ -36,5 +36,22 @@ function indiceDoMaior(lista){
 }
 
 indiceDoMaior([2, 3, 6, 7, 10, 1]);
+
+console.log('\n');
+
+// 3. Crie uma função que receba um array de inteiros e retorne o índice do menor valor.
+
+function indiceDoMenor(lista){
+    let menor = Infinity;
+    let menorIndice = Infinity;
+    for (let i = 0; i < lista.length; i += 1){
+        if (lista[i] < menor){
+            menorIndice = i;
+        }
+  }
+  console.log(menorIndice);
+}
+
+indiceDoMenor([2, 4, 6, 7, 10, 0, -3]);
 
 console.log('\n');
