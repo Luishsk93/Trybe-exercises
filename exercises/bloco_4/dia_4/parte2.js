@@ -72,3 +72,26 @@ function maiorQtdeCaracteres(lista){
 maiorQtdeCaracteres(['José', 'Lucas', 'Nádia', 'Fernanda', 'Cairo', 'Joana']);
 
 console.log('\n');
+
+function numeroQueMaisRepete(lista){
+    let maisRepete = -1;
+    let numeroQueMaisRepete = -Infinity;
+    for (let i = 0; i < lista.length; i += 1){
+        let repete = 0
+        for (numero of lista){
+            if (lista[i] == numero){
+                repete += 1;
+            }
+        }
+        if (repete > maisRepete){
+            maisRepete = repete;
+            numeroQueMaisRepete = lista[i];
+        }
+    }
+    console.log(numeroQueMaisRepete);
+
+}
+
+numeroQueMaisRepete([2, 3, 2, 5, 8, 2, 3]);
+
+console.log('\n');
