@@ -110,3 +110,18 @@ function somatorio(n){
 somatorio(5);
 
 console.log('\n');
+
+function verificaFimPalavra(word, ending){
+    for (let i = word.length - 1; i > word.length - ending.length; i -= 1){
+        igual = false;
+        if (word[i] == ending[i - (word.length - ending.length)]){
+            igual = true;
+        } else{
+            igual = false;
+        }
+    }
+    console.log(igual);
+}
+
+verificaFimPalavra('trybe', 'be') ;
+verificaFimPalavra('joaofernando', 'fernan') ;
