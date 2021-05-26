@@ -13,9 +13,9 @@ Recupere o subtítulo e altere a cor dele usando a função getElementsByTagName
     <p class="paragraph">Segundo parágrafo!</p>
 
     <script>
-      const paragraphs = document.getElementsByClassName("paragraph");
-      paragraphs[0].style.color = "pink";
-      const subtitle = document.getElementsByClassName("subtitle");
+      const paragraphs = document.querySelector(".paragraph");
+      paragraphs.style.color = "pink";
+      const subtitle = document.querySelectorAll(".subtitle");
       subtitle[0].style.color = "blue";
     </script>
   </body>
