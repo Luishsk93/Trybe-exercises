@@ -42,21 +42,37 @@
       function changeP() {
         document.getElementsByTagName("p")[1].innerText = "Empregado";
       }
+
       changeP()
+
       function changeMainContentColor() {
         let mainContent = document.getElementsByClassName("main-content");
         mainContent[0].style.backgroundColor = "rgb(76,164,109)";
       }
-      changeMainContentColor() 
+
+      changeMainContentColor()
+
       function changeCenterContentColor() {
         let centerContent = document.getElementsByClassName("center-content")
         centerContent[0].style.backgroundColor = "white";
       }
+
       changeCenterContentColor()
+
       function correctTitle() {
         document.getElementsByClassName("title")[0].innerText = "JavaScript";
       }
-      correctTitle()  
+
+      correctTitle()
+
+      function uppercase() {
+        let p = document.getElementsByTagName("p");
+        for (i = 0; i < p.length ; i += 1) {
+          p[i].style.textTransform = "uppercase";
+        }
+      }
+      uppercase()
+
         /*
         Aqui você vai modificar os elementos já existentes utilizando apenas as funções:
         - document.getElementById()
