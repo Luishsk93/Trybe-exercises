@@ -39,6 +39,50 @@
       </div>
     </div>
     <script>
+      function changeP() {
+        document.getElementsByTagName("p")[1].innerText = "Empregado";
+      }
+
+      changeP()
+
+      function changeMainContentColor() {
+        let mainContent = document.getElementsByClassName("main-content");
+        mainContent[0].style.backgroundColor = "rgb(76,164,109)";
+      }
+
+      changeMainContentColor()
+
+      function changeCenterContentColor() {
+        let centerContent = document.getElementsByClassName("center-content")
+        centerContent[0].style.backgroundColor = "white";
+      }
+
+      changeCenterContentColor()
+
+      function correctTitle() {
+        document.getElementsByClassName("title")[0].innerText = "JavaScript";
+      }
+
+      correctTitle()
+
+      function uppercase() {
+        let p = document.getElementsByTagName("p");
+        for (i = 0; i < p.length ; i += 1) {
+          p[i].style.textTransform = "uppercase";
+        }
+      }
+      uppercase()
+
+      function printP() {
+        let p = document.getElementsByTagName("p");
+        for (i = 0; i < p.length ; i += 1) {
+          console.log(p[i]);
+        }
+      }
+      
+      printP()
+
+
         /*
         Aqui você vai modificar os elementos já existentes utilizando apenas as funções:
         - document.getElementById()
@@ -47,8 +91,8 @@
  Crie uma função que mude o texto na tag <p> para uma descrição de como você se vê daqui a 2 anos. (Não gaste tempo pensando no texto e sim realizando o exercício)
  Crie uma função que mude a cor do quadrado amarelo para o verde da Trybe (rgb(76,164,109)).
  Crie uma função que mude a cor do quadrado vermelho para branco.
- Crie uma função que corrija o texto da tag <h1>.
- Crie uma função que modifique todo o texto da tag <p> para maiúsculo.
+ Cria uma função que corrija o texto da tag <h1>.
+ Cria uma função que modifique todo o texto da tag <p> para maiúsculo.
  Crie uma função que exiba o conteúdo de todas as tags <p> no console.
         */
     </script>
