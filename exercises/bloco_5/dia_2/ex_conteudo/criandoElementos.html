@@ -12,10 +12,14 @@
   </div>
   
   <script>
-    let irmao = document.createElement("div");
-    document.querySelector("#pai").appendChild(irmao);
-    let filhoDoSegundo = document.createElement("div");
-    document.querySelector("#elementoOndeVoceEsta").appendChild(irmao);
+    let div = document.createElement("div");
+    document.querySelector("#pai").appendChild(div);
+    document.querySelector("#elementoOndeVoceEsta").appendChild(div);
+    let filhoDoPrimeiroFilhoDoFilho = document.createElement("div");
+    filhoDoPrimeiroFilhoDoFilho.id = "filhoDoPrimeiroFilhoDoFilho";
+    document.querySelector("#primeiroFilhoDoFilho").appendChild(filhoDoPrimeiroFilhoDoFilho);
+    document.querySelector("#filhoDoPrimeiroFilhoDoFilho").parentElement.parentElement.nextElementSibling;
+
   </script>
 <!-- Crie um irmão para elementoOndeVoceEsta .
 Crie um filho para elementoOndeVoceEsta .
