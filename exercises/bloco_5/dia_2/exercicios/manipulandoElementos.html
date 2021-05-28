@@ -79,13 +79,15 @@
         document.querySelector(".left-content").appendChild(img);
         img.className = "small-image";
         img.src = "https://picsum.photos/200";
-        let lista = document.createElement("ul");
-        let umADez = ['um','dois','tres','quatro','cinco','seis','sete','oito','nove','dez'];
         let right = document.querySelector(".right-content");
+        let lista = document.createElement("ul");
+        right.appendChild(lista);
+        let umADez = ['um','dois','tres','quatro','cinco','seis','sete','oito','nove','dez'];
+        
         for (let i = 0; i < umADez.length; i += 1) {
             let numero = document.createElement("li");
             numero.innerText = umADez[i];
-            right.appendChild(numero);
+            lista.appendChild(numero);
         }
 
         for (let i = 0; i < 3; i += 1) {
@@ -102,8 +104,8 @@
         document.querySelector("div").removeChild(div3);
         right.style.marginRight = "auto";
         let main = document.querySelector(".center-content").parentElement;
-        main.style.backgroundColor = "green"
-
+        main.style.backgroundColor = "green";
+        document.querySelector("ul").removeChild
     </script>
   </body>
 </html>
