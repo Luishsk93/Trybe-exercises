@@ -105,7 +105,10 @@
         right.style.marginRight = "auto";
         let main = document.querySelector(".center-content").parentElement;
         main.style.backgroundColor = "green";
-        document.querySelector("ul").removeChild
+        let nove = document.querySelector("ul").children[8]
+        let dez = document.querySelector("ul").children[9]
+        document.querySelector("ul").removeChild(nove);
+        document.querySelector("ul").removeChild(dez);
     </script>
   </body>
 </html>
