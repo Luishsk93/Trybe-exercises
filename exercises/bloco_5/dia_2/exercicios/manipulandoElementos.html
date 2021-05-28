@@ -57,7 +57,58 @@
   </head>
   <body>
     <script>
-      // COLOQUE SEU CÓDIGO AQUI
+        let h1 = document.createElement("h1");
+        document.querySelector("body").appendChild(h1);
+        h1.innerText = "Exercício 5.2 - JavaScript DOM";
+        let div1 = document.createElement("div");
+        div1.className = "main-content";
+        document.querySelector("body").appendChild(div1);
+        let div2 = document.createElement("div");
+        div2.className = "center-content";
+        document.querySelector("div").appendChild(div2);
+        let p = document.createElement("p");
+        p.innerText = "Texto injetado com sucesso.";
+        document.querySelector(".center-content").appendChild(p);
+        let div3 = document.createElement("div");
+        div3.className = "left-content";
+        document.querySelector("div").appendChild(div3);
+        let div4 = document.createElement("div");
+        div4.className = "right-content";
+        document.querySelector("div").appendChild(div4);
+        let img = document.createElement("img");
+        document.querySelector(".left-content").appendChild(img);
+        img.className = "small-image";
+        img.src = "https://picsum.photos/200";
+        let right = document.querySelector(".right-content");
+        let lista = document.createElement("ul");
+        right.appendChild(lista);
+        let umADez = ['um','dois','tres','quatro','cinco','seis','sete','oito','nove','dez'];
+        
+        for (let i = 0; i < umADez.length; i += 1) {
+            let numero = document.createElement("li");
+            numero.innerText = umADez[i];
+            lista.appendChild(numero);
+        }
+
+        for (let i = 0; i < 3; i += 1) {
+            let h3 = document.createElement("h3");
+            document.querySelector("div").appendChild(h3);
+        }
+
+        h1.className = "title";
+        let H3 = document.getElementsByTagName("h3");
+        for (let i = 0; i < H3.length; i += 1) {
+            H3[i].className = "description";
+        }
+
+        document.querySelector("div").removeChild(div3);
+        right.style.marginRight = "auto";
+        let main = document.querySelector(".center-content").parentElement;
+        main.style.backgroundColor = "green";
+        let nove = document.querySelector("ul").children[8]
+        let dez = document.querySelector("ul").children[9]
+        document.querySelector("ul").removeChild(nove);
+        document.querySelector("ul").removeChild(dez);
     </script>
   </body>
 </html>
