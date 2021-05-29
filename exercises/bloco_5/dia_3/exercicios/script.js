@@ -131,3 +131,19 @@ function createDaysOfTheWeek() {
   }
 
   corDaLegenda('blue');
+
+  let task = document.getElementsByClassName('task')[0];
+  let clickLegenda = false;
+  function atribuiClasse(event) {
+    if (clickLegenda == false) {
+        event.target.className = 'task selected';
+        clickLegenda = true;
+    }
+    else {
+        event.target.className = 'task'
+        clickLegenda = false;
+    }
+
+  }
+
+  task.addEventListener('click',atribuiClasse);
