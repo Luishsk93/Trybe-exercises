@@ -47,18 +47,24 @@ function createDaysOfTheWeek() {
     // Referencia: https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_element_addeventlistener2
   }
   createBotton('Feriados');
+
+  const holidays = document.querySelectorAll('.holiday');
   let click = false;
-  function mudaCor(event) {
+  function mudaCor() {
     
     if (click == false) {
-        event.target.style.backgroundColor = 'pink';
+        for (i = 0; i < holidays.length; i += 1){
+            holidays[i].style.backgroundColor = 'pink';
+        }
         click = true;
+
     }
     else if (click == true) {
-        event.target.style.backgroundColor = 'rgb(238,238,238)';
+        for (i = 0; i < holidays.length; i += 1){
+            holidays[i].style.backgroundColor = 'rgb(238,238,238)';
+        }
         click = false;
     }
-    
   }
 
   document.getElementById("btn-holiday").addEventListener("click", mudaCor);
