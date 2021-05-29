@@ -127,8 +127,9 @@ function createDaysOfTheWeek() {
     tasks.appendChild(legenda);
   }
 
-  corDaLegenda('blue');
-
+  let corTarefa = 'blue';
+  corDaLegenda(corTarefa);
+  
   let task = document.getElementsByClassName('task')[0];
   let clickLegenda = false;
   function atribuiClasse(event) {
@@ -144,3 +145,22 @@ function createDaysOfTheWeek() {
   }
 
   task.addEventListener('click',atribuiClasse);
+
+  const liDay = document.getElementsByClassName('day');
+  let click = false;
+
+  function mudaCorDoDia(event) {
+    if (click == false) {
+        event.target.style.backgroundColor = corTarefa;
+        click = true;
+
+    }
+    else if (click == true) {
+        event.target.style.backgroundColor = 'rgb(238,238,238)';
+        click = false;
+    }
+  }
+
+  for (i = 0; i < liDay.length; i += 1) {
+      let theDay = liDay[i].addEventListener('click', mudaCorDoDia);
+  }
