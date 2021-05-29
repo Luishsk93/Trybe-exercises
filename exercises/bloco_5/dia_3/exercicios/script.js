@@ -104,12 +104,20 @@ function createDaysOfTheWeek() {
 
   function zoomIn (event) {
     event.target.style.fontSize = 'x-large';
-
   }
 
   function zoomOut (event) {
     event.target.style.fontSize = 'initial';
-
   }
+
   days.addEventListener("mouseover",zoomIn);
   days.addEventListener("mouseout",zoomOut);
+
+  function adicionaTarefa(string) {
+    const tasks = document.querySelector('.my-tasks')
+    tarefa = document.createElement('span');
+    tarefa.innerHTML = string + '';
+    tasks.appendChild(tarefa);
+  }
+
+  adicionaTarefa('cozinhar');
