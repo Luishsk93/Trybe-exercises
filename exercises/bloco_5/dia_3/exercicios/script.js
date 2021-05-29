@@ -113,11 +113,21 @@ function createDaysOfTheWeek() {
   days.addEventListener("mouseover",zoomIn);
   days.addEventListener("mouseout",zoomOut);
 
+  const tasks = document.querySelector('.my-tasks')
+
   function adicionaTarefa(string) {
-    const tasks = document.querySelector('.my-tasks')
     tarefa = document.createElement('span');
     tarefa.innerHTML = string + '';
     tasks.appendChild(tarefa);
   }
 
   adicionaTarefa('cozinhar');
+
+  function corDaLegenda(cor) {
+    legenda = document.createElement('div');
+    legenda.className = 'task';
+    legenda.style.backgroundColor = cor;
+    tasks.appendChild(legenda);
+  }
+
+  corDaLegenda('blue');
