@@ -35,6 +35,16 @@ function createDaysOfTheWeek() {
       DaysList.appendChild(dayListItem);
     }
   };
-    
   
   createDaysOfTheMonth();
+
+  function createBotton (string) {
+    let button = document.createElement("button");
+    button.innerHTML = string;
+    button.id = 'btn-holiday';
+    let buttonsContainer = document.querySelector(".buttons-container");
+    buttonsContainer.appendChild(button);
+    // Referencia: https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_element_addeventlistener2
+  }
+  createBotton('Feriados');
+  
