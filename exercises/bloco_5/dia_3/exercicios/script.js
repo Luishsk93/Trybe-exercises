@@ -47,4 +47,19 @@ function createDaysOfTheWeek() {
     // Referencia: https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_element_addeventlistener2
   }
   createBotton('Feriados');
+  let click = false;
+  function mudaCor(event) {
+    
+    if (click == false) {
+        event.target.style.backgroundColor = 'pink';
+        click = true;
+    }
+    else if (click == true) {
+        event.target.style.backgroundColor = 'rgb(238,238,238)';
+        click = false;
+    }
+    
+  }
+
+  document.getElementById("btn-holiday").addEventListener("click", mudaCor);
   
