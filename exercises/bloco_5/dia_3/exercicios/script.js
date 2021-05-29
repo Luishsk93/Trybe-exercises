@@ -14,11 +14,10 @@ function createDaysOfTheWeek() {
   createDaysOfTheWeek();
   
   // Escreva seu código abaixo.
+  const DaysList = document.querySelector('#days');
 
   function createDaysOfTheMonth() {
     const dezDaysList = [29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
-    const DaysList = document.querySelector('#days');
-  
     for (let index = 0; index < dezDaysList.length; index += 1) {
       const days = dezDaysList[index];
       const dayListItem = document.createElement('li');
@@ -100,8 +99,6 @@ function createDaysOfTheWeek() {
 
   document.getElementById("btn-friday").addEventListener("click", mudaTexto);
 
-  let days  = document.getElementById('days')
-
   function zoomIn (event) {
     event.target.style.fontSize = 'x-large';
   }
@@ -110,8 +107,8 @@ function createDaysOfTheWeek() {
     event.target.style.fontSize = 'initial';
   }
 
-  days.addEventListener("mouseover",zoomIn);
-  days.addEventListener("mouseout",zoomOut);
+  DaysList.addEventListener("mouseover",zoomIn);
+  DaysList.addEventListener("mouseout",zoomOut);
 
   const tasks = document.querySelector('.my-tasks')
 
