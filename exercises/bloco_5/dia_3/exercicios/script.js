@@ -128,26 +128,35 @@ function createDaysOfTheWeek() {
   }
 
   let corTarefa = 'blue';
+  let corTarefaOriginal = 'blue';
   corDaLegenda(corTarefa);
   
   let task = document.getElementsByClassName('task')[0];
   let clickLegenda = false;
+
   function atribuiClasse(event) {
     if (clickLegenda == false) {
         event.target.className = 'task selected';
         clickLegenda = true;
+        corTarefa = corTarefaOriginal;
     }
     else {
         event.target.className = 'task'
         clickLegenda = false;
+        corTarefa = 'rgb(238,238,238)';
     }
 
   }
 
   task.addEventListener('click',atribuiClasse);
 
+  let divTask = document.querySelector('.my-tasks').children[2];
+
   const liDay = document.getElementsByClassName('day');
   let click = false;
+  for (i = 0; i < liDay.length; i += 1) {
+    let theDay = liDay[i].addEventListener('click', mudaCorDoDia);
+}
 
   function mudaCorDoDia(event) {
     if (click == false) {
