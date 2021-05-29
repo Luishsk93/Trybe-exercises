@@ -99,4 +99,17 @@ function createDaysOfTheWeek() {
   }
 
   document.getElementById("btn-friday").addEventListener("click", mudaTexto);
-  
+
+  let days  = document.getElementById('days')
+
+  function zoomIn (event) {
+    event.target.style.fontSize = 'x-large';
+
+  }
+
+  function zoomOut (event) {
+    event.target.style.fontSize = 'initial';
+
+  }
+  days.addEventListener("mouseover",zoomIn);
+  days.addEventListener("mouseout",zoomOut);
