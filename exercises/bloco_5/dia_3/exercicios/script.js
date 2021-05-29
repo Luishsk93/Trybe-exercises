@@ -41,7 +41,12 @@ function createDaysOfTheWeek() {
   function createBotton (string) {
     let button = document.createElement("button");
     button.innerHTML = string;
-    button.id = 'btn-holiday';
+    if (string == 'Feriados') {
+        button.id = 'btn-holiday';
+    }
+    else if (string == 'Sexta-feira') {
+        button.id = 'btn-friday';
+    }
     let buttonsContainer = document.querySelector(".buttons-container");
     buttonsContainer.appendChild(button);
     // Referencia: https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_element_addeventlistener2
@@ -68,4 +73,6 @@ function createDaysOfTheWeek() {
   }
 
   document.getElementById("btn-holiday").addEventListener("click", mudaCor);
+
+  createBotton('Sexta-feira');
   
