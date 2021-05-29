@@ -54,25 +54,49 @@ function createDaysOfTheWeek() {
   createBotton('Feriados');
 
   const holidays = document.querySelectorAll('.holiday');
-  let click = false;
+  let clickFeriados = false;
   function mudaCor() {
     
-    if (click == false) {
+    if (clickFeriados == false) {
         for (i = 0; i < holidays.length; i += 1){
             holidays[i].style.backgroundColor = 'pink';
         }
-        click = true;
+        clickFeriados = true;
 
     }
-    else if (click == true) {
+    else if (clickFeriados == true) {
         for (i = 0; i < holidays.length; i += 1){
             holidays[i].style.backgroundColor = 'rgb(238,238,238)';
         }
-        click = false;
+        clickFeriados = false;
     }
   }
 
   document.getElementById("btn-holiday").addEventListener("click", mudaCor);
 
   createBotton('Sexta-feira');
+
+  const fridays = document.querySelectorAll('.friday');
+  const fridaysOriginal = document.querySelectorAll('.friday');
+  let clickSexta = false;
+  function mudaTexto() {
+    sextas = [];
+    if (clickSexta == false) {
+        for (i = 0; i < fridays.length; i += 1){
+            sextas.push(fridays[i]);
+            fridays[i].innerText = 'Sextou!';
+        }
+        clickSexta = true;
+
+    }
+    else if (clickSexta == true) {
+        fridays[0].innerText = '4';
+        fridays[1].innerText = '11';
+        fridays[2].innerText = '18';
+        fridays[3].innerText = '25';
+        clickSexta = false;
+    }
+  }
+
+  document.getElementById("btn-friday").addEventListener("click", mudaTexto);
   
