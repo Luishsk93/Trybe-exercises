@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercicio - Formulario</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <fieldset>
+        <div class="line">
+            <label for="full-name">Nome</label>
+            <input type="text" name="full-name" id="full-name" maxlength="40" required>
+        </div>
+        <br>
+        <div class="line">
+            <label for="email">Email</label>
+            <input type="text" name="email" id="email" maxlength="50" required>
+        </div>
+        <br>
+        <div class="line">
+            <label for="cpf">CPF</label>
+            <input type="text" name="cpf" id="cpf" maxlength="11" required>
+        </div>
+        <br>
+        <div class="line">
+            <label for="endereco">Endereço</label>
+            <input type="text" name="endereco" id="endereco" maxlength="200" required>
+        </div>
+        <br>
+        <div class="line">
+            <label for="cidade">Cidade</label>
+            <input type="text" name="cidade" id="cidade" maxlength="28" required>
+        </div>
+        <br>
+        <div class="line">
+            <label for="estado">Estado</label>
+            <select name="estado" id="estado" required>
+
+            </select>
+            </div>
+        <br>
+        <div class="line">
+            <legend>Tipo</legend>
+            <label for="tipo-moradia-casa">Casa</label>
+            <input type="radio" name="tipo-moradia" id="tipo-moradia-casa" required>
+            <br>
+            <label for="tipo-moradia-ap">Apartamento</label>
+            <input type="radio" name="tipo-moradia" id="tipo-moradia-ap" required>
+            </div>
+        <br>
+    </fieldset>
+    <script src="script.js"></script>
+</body>
+</html>
