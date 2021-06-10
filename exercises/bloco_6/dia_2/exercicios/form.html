@@ -3,44 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <title>Exercicio - Formulario</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="signin.css">
 </head>
 <body>
   <form action="">
     <fieldset>
-        <div class="line">
+        <div>
             <label for="full-name">Nome</label>
             <input type="text" name="full-name" id="full-name" maxlength="40" required>
         </div>
         <br>
-        <div class="line">
+        <div>
             <label for="email">Email</label>
             <input type="text" name="email" id="email" maxlength="50" required>
         </div>
         <br>
-        <div class="line">
+        <div>
             <label for="cpf">CPF</label>
             <input type="text" name="cpf" id="cpf" maxlength="11" required>
         </div>
         <br>
-        <div class="line">
+        <div>
             <label for="endereco">Endereço</label>
             <input type="text" name="endereco" id="endereco" maxlength="200" required>
         </div>
         <br>
-        <div class="line">
+        <div>
             <label for="cidade">Cidade</label>
             <input type="text" name="cidade" id="cidade" maxlength="28" required>
         </div>
         <br>
-        <div class="line">
+        <div>
             <label for="estado">Estado</label>
             <select name="estado" id="estado" required>
 
             </select>
             </div>
         <br>
-        <div class="line">
+        <div>
             <legend>Tipo</legend>
             <label for="tipo-moradia-casa">Casa</label>
             <input type="radio" name="tipo-moradia" value = "" id="tipo-moradia-casa" required>
@@ -53,17 +54,17 @@
     <fieldset>
         <div>
             <label for="curriculo">Resumo do currículo</label>
-            <textarea class="area-texto" name="curriculo" id="curriculo" maxlength="1000" required></textarea>
+            <textarea name="curriculo" id="curriculo" maxlength="1000" required></textarea>
         </div>
-        <div class="line">
+        <div>
             <label for="Cargo">Cargo</label>
             <input type="text" name="Cargo" id="Cargo" maxlength="40" required>
         </div>
-        <div class="line">
+        <div>
             <label for="DescricaoCargo">Descrição do cargo</label>
             <input type="text" name="DescricaoCargo" id="DescricaoCargo" maxlength="500" required>
         </div>
-        <div class="line">
+        <div>
             <label for="dataInicio">Data de início</label>
             <input type="text" value="" name="dataInicio" id="dataInicio" required placeholder="dd/mm/aaaa">
         </div>
