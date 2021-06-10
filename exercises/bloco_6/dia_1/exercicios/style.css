@@ -13,4 +13,9 @@
 
 .line input[type="radio"] {
   margin-top: 15px;
-  }
+}
+
+.area-texto {
+  width: 100%;
+  height: 100px;
+}

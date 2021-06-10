@@ -6,3 +6,10 @@ for (let index = 0; index < listaEstados.length; index += 1) {
   opcaoEstado.innerHTML = listaEstados[index];
   estados.appendChild(opcaoEstado);
 }
+
+const data = document.getElementById('dataInicio')
+if (data.value !== "") {
+  if (parseInt(data.value[0] + data.value[1]) < 0 || parseInt(data.value[0] + data.value[1]) > 31 || parseInt(data.value[3] + data.value[4] < 0) || parseInt(data.value[3] + data.value[4] > 12) || data.value === "-") {
+    alert('Data inconsistente');
+  }
+}
