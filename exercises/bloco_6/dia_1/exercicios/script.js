@@ -4,6 +4,9 @@ const data = document.getElementById('dataInicio');
 const botaoSubmeter = document.getElementById('botaoSubmeter');
 const casa = document.getElementById('tipo-moradia-casa');
 const ap = document.getElementById('tipo-moradia-ap');
+const apaga = document.getElementById('limpaTudo');
+const divDadosConsolidados = document.getElementById('dadosConsolidados');
+const divErro = document.getElementById('divErro');
 const listaIds = ['full-name', 'email', 'cpf', 'endereco', 'cidade', 'Cargo', 'DescricaoCargo', 'curriculo', 'dataInicio'];
 let validado = false;
 let validadoData = false;
@@ -14,6 +17,7 @@ botaoSubmeter.addEventListener('click', validarTextos);
 botaoSubmeter.addEventListener('click', validarRadio);
 botaoSubmeter.addEventListener('click', dadosConsolidados)
 botaoSubmeter.addEventListener('click', erro)
+apaga.addEventListener('click', apagarTudo);
 
 for (let index = 0; index < listaEstados.length; index += 1) {
   const opcaoEstado = document.createElement('option');
@@ -63,8 +67,6 @@ function validarRadio() {
 
 function dadosConsolidados() {
   if (validado === true && validadoData === true) {
-    const divConsolidado = document.createElement('div');
-    document.body.appendChild(divConsolidado);
     for (let i = 0; i < listaIds.length; i += 1) {
       let y = document.getElementById(listaIds[i]);
       var texto = texto + " " + y.value;
@@ -74,25 +76,30 @@ function dadosConsolidados() {
     } else if (ap.checked === true) {
       texto = texto + " " + 'apartamento';
     }
-    divConsolidado.innerText = texto;
+    divDadosConsolidados.innerText = texto;
   }
 }
 
 function erro() {
   if (validado === false && validadoData === true) {
     let texto = "Dados nao validados";
-    const divErro = document.createElement('div');
-    document.body.appendChild(divErro);
     divErro.innerText = texto;
   } else if (validado === true && validadoData === false) {
-    const divErro = document.createElement('div');
-    document.body.appendChild(divErro);
     let texto = "Data invalida";
     divErro.innerText = texto;
   } else if (validado === false && validadoData === false) {
-    const divErro = document.createElement('div');
-    document.body.appendChild(divErro);
     let texto = "Dados nao validados e Data invalida";
     divErro.innerText = texto;
   }
 } 
+
+function apagarTudo() {
+  for (let i = 0; i < listaIds.length; i += 1) {
+    let x = document.getElementById(listaIds[i]);
+    x.value = "";
+  }
+  divErro.innerHTML = "";
+  divDadosConsolidados.innerText = "";
+  casa.checked = false;
+  ap.checked = false;
+}
