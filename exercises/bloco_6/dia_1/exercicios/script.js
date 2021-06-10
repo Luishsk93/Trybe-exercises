@@ -8,8 +8,18 @@ for (let index = 0; index < listaEstados.length; index += 1) {
 }
 
 const data = document.getElementById('dataInicio')
-if (data.value !== "") {
-  if (parseInt(data.value[0] + data.value[1]) < 0 || parseInt(data.value[0] + data.value[1]) > 31 || parseInt(data.value[3] + data.value[4] < 0) || parseInt(data.value[3] + data.value[4] > 12) || data.value === "-") {
+function validaData(event) {
+  let x = event.target
+  if (x.value !== "") {
+    if (parseInt(x.value[0] + x.value[1]) < 0 || parseInt(x.value[0] + x.value[1]) > 31 || parseInt(x.value[3] + x.value[4]) < 0 || parseInt(x.value[3] + x.value[4]) > 12 || x.value[6] === "-") {
     alert('Data inconsistente');
+    }
   }
+}
+data.addEventListener('input', validaData);
+
+const botaoSubmeter = document.getElementById('botaoSubmeter');
+
+function previnir(event) {
+  
 }
