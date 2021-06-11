@@ -5,6 +5,8 @@
     <title>Exercicio - Formulario</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="signin.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
+
 </head>
 <body>
   <form action="">
@@ -66,7 +68,7 @@
         </div>
         <div>
             <label for="dataInicio">Data de início</label>
-            <input type="text" value="" name="dataInicio" id="dataInicio" required placeholder="dd/mm/aaaa">
+            <input type="text" value="" name="dataInicio" id="datepicker" required placeholder="dd/mm/aaaa">
         </div>
     </fieldset>
     <div id="dadosConsolidados"></div>
@@ -74,6 +76,29 @@
     <button id="botaoSubmeter">Submeter</button>
     <button id="limpaTudo">Apagar tudo</button>
   </form>
-    <script src="script.js"></script>
 </body>
+<script src="pikaday.js"></script>
+<script>
+    var picker = new Pikaday({
+    field: document.getElementById('datepicker'),
+    format: 'D/M/YYYY',
+    toString(date, format) {
+        // you should do formatting based on the passed format,
+        // but we will just return 'D/M/YYYY' for simplicity
+        const day = date.getDate();
+        const month = date.getMonth() + 1;
+        const year = date.getFullYear();
+        return `${day}/${month}/${year}`;
+    },
+    parse(dateString, format) {
+        // dateString is the result of `toString` method
+        const parts = dateString.split('/');
+        const day = parseInt(parts[0], 10);
+        const month = parseInt(parts[1], 10) - 1;
+        const year = parseInt(parts[2], 10);
+        return new Date(year, month, day);
+    }
+});
+
+</script>
 </html>
