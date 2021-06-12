@@ -5,75 +5,113 @@
     <title>Exercicio - Formulario</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="signin.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
 </head>
 <body>
-  <form action="">
+  <form action="" method="post" novalidate>
     <fieldset>
-        <div>
-            <label for="full-name">Nome</label>
-            <input type="text" name="full-name" id="full-name" maxlength="40" required>
-        </div>
-        <br>
-        <div>
-            <label for="email">Email</label>
-            <input type="text" name="email" id="email" maxlength="50" required>
-        </div>
-        <br>
-        <div>
-            <label for="cpf">CPF</label>
-            <input type="text" name="cpf" id="cpf" maxlength="11" required>
-        </div>
-        <br>
-        <div>
-            <label for="endereco">Endereço</label>
-            <input type="text" name="endereco" id="endereco" maxlength="200" required>
-        </div>
-        <br>
-        <div>
-            <label for="cidade">Cidade</label>
-            <input type="text" name="cidade" id="cidade" maxlength="28" required>
-        </div>
-        <br>
-        <div>
-            <label for="estado">Estado</label>
-            <select name="estado" id="estado" required>
-
-            </select>
+        <div class="field">
+            <label>
+                <span>Name</span>
+                <input data-validate-length-range="40" data-validate-words="2" name="name" placeholder="ex. John f. Kennedy" required="required" type="text" />
+            </label>
+            <div class='tooltip help'>
+                <span>?</span>
+                <div class='content'>
+                    <b></b>
+                    <p>Name must be at least 2 words</p>
+                </div>
             </div>
-        <br>
-        <div>
-            <legend>Tipo</legend>
-            <label for="tipo-moradia-casa">Casa</label>
-            <input type="radio" name="tipo-moradia" value = "" id="tipo-moradia-casa" required>
+        </div>
+        <div class="field">
+            <label>
+                <span>email</span>
+                <input name="email" data-validate-length-range="50"required="required" type="email" />
+            </label>
+        </div>
+        <div class="field">
+            <label>
+                <span>CPF</span>
+                <input data-validate-length-range="11" data-validate-words="1" name="cpf" placeholder="ex. 11122244455" required="required" type="text" />
+            </label>
+        </div>
+        <div class="field">
+            <label>
+                <span>endereco</span>
+                <input data-validate-length-range="200" data-validate-words="1" name="endereco" placeholder="ex. R. Brasil" required="required" type="text" />
+            </label>
+        </div>
+        <div class="field">
+            <label>
+                <span>cidade</span>
+                <input data-validate-length-range="28" data-validate-words="1" name="cidade" placeholder="ex. Rio de Janeiro" required="required" type="text" />
+            </label>
+        </div>
+        <div class="field">
+                <label for="estado">Estado</label>
+                <select name="estado" id="estado" required="required">
+                </select>
+        </div>
+        <div class="field">
+            <label><input type="radio" name="radio" class="form__radio" data-validate-field="radio">Casa</label>
             <br>
-            <label for="tipo-moradia-ap">Apartamento</label>
-            <input type="radio" name="tipo-moradia" value = "" id="tipo-moradia-ap" required>
-            </div>
-        <br>
+            <label><input type="radio" name="radio" class="form__radio" data-validate-field="radio">Apartamento</label>
+        </div>
     </fieldset>
     <fieldset>
-        <div>
-            <label for="curriculo">Resumo do currículo</label>
-            <textarea name="curriculo" id="curriculo" maxlength="1000" required></textarea>
+        <div class="field">
+            <label>
+                <span>Resumo do currículo</span>
+                <input data-validate-length-range="1000" data-validate-words="1" name="curriculo" placeholder="" required="required" type="text" />
+            </label>
         </div>
-        <div>
-            <label for="Cargo">Cargo</label>
-            <input type="text" name="Cargo" id="Cargo" maxlength="40" required>
+        <div class="field">
+            <label>
+                <span>Cargo</span>
+                <input data-validate-length-range="40" data-validate-words="1" name="Cargo" placeholder="ex. Analista de operacoes" required="required" type="text" />
+            </label>
         </div>
-        <div>
-            <label for="DescricaoCargo">Descrição do cargo</label>
-            <input type="text" name="DescricaoCargo" id="DescricaoCargo" maxlength="500" required>
+        <div class="field">
+            <label>
+                <span>Descricao do Cargo</span>
+                <input data-validate-length-range="500" data-validate-words="1" name="DescricaoCargo" placeholder="" required="required" type="text" />
+            </label>
         </div>
         <div>
             <label for="dataInicio">Data de início</label>
-            <input type="text" value="" name="dataInicio" id="dataInicio" required placeholder="dd/mm/aaaa">
+            <input type="text" value="" name="dataInicio" id="datepicker" required placeholder="dd/mm/aaaa">
         </div>
     </fieldset>
     <div id="dadosConsolidados"></div>
     <div id="divErro"></div>
-    <button id="botaoSubmeter">Submeter</button>
+    <button id="botaoSubmeter">SUBMIT</button>
     <button id="limpaTudo">Apagar tudo</button>
   </form>
-    <script src="script.js"></script>
 </body>
+<script src="script.js"></script>
+<!-- Referencia: https://github.com/Pikaday/Pikaday -->
+<script src="pikaday.js"></script>
+<script>
+    var picker = new Pikaday({
+    field: document.getElementById('datepicker'),
+    format: 'D/M/YYYY',
+    toString(date, format) {
+        // you should do formatting based on the passed format,
+        // but we will just return 'D/M/YYYY' for simplicity
+        const day = date.getDate();
+        const month = date.getMonth() + 1;
+        const year = date.getFullYear();
+        return `${day}/${month}/${year}`;
+    },
+    parse(dateString, format) {
+        // dateString is the result of `toString` method
+        const parts = dateString.split('/');
+        const day = parseInt(parts[0], 10);
+        const month = parseInt(parts[1], 10) - 1;
+        const year = parseInt(parts[2], 10);
+        return new Date(year, month, day);
+    }
+});
+</script>
+<script src='validator.js'></script>
 </html>
