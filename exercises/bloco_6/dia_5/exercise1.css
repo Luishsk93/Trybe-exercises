@@ -16,3 +16,26 @@ img {
 figure {
     margin: 20px 0;
 }
+
+@media screen and (min-width:444px) {
+  body {
+    background-color:red;
+    font-size: x-large;
+    margin: 0;
+  }
+  .figuras {
+    display: flex;
+    justify-content: space-around;
+  }
+  .coluna1 {
+    display: flex;
+    /* border: 2px solid salmon; */
+    flex-direction: column;
+  }
+  .coluna2 {
+    display: flex;
+    /* border: 2px solid salmon; */
+    flex-direction: column;
+  }
+}
+
