@@ -2,7 +2,7 @@ body {
   font-size: larger;
 }
 h1 {
-
+  font-size: smaller;
 }
 h2 {
 
@@ -13,5 +13,5 @@ img {
 }
 
 figure {
-    margin: 0;
+    margin: 20px 0;
 }
