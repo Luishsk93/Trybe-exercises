@@ -80,3 +80,18 @@
     padding: 20px;
     height: 1%;
   }
+
+  @media print {
+    #header, #navigation, #footer{
+      display: none;
+    }
+    img {
+      width: 80%;
+    }
+    #aside {
+        float: bottom;
+        padding: 20px 0;
+        margin: 0px 450px 0 0;
+        display: block;
+      }
+  }
