@@ -4,46 +4,81 @@ html {
   *, *:before, *:after {
     box-sizing: inherit;
   }
-  body {
+body {
     background-color: blanchedalmond;
-  }
+}
 
-  header {
+header {
     background-color: green;
-  }
-  header p {
+}
+header p {
     color: white;
     text-align: center;
-  }
-  .aside-one h2, .aside-two h2, .main-content h1{
+}
+.aside-one h2, .aside-two h2, .main-content h1{
     background-color: white;
     text-align: center;
+}
+header ul {
+  list-style-type:none;
+  display: flex;
+  justify-content: space-between;
+  margin-right: 40px;
+  padding-bottom: 10px;
+}
+.aside-one , .aside-two{
+  list-style-type:none;
+}
+.aside-one ul, .aside-two ul{
+  list-style-type:none;
+}
+
+@media screen and (max-width: 480px) {
+  header ul{
+    display: none;    
   }
-  @media screen and (max-width: 480px) {
-    header ul{
-      display: none;
-    }
-    header p {
-      font-size: x-large;
-    }
-    .aside-one , .aside-two{
-      text-align: center;
-      list-style-type:none;
-      font-size: larger;
-    }
-    .aside-one ul, .aside-two ul{
-      list-style-type:none;
-      margin-right: 40px;
-    }
-    .main-content p {
-      font-size: x-large;
-      margin: 30px 0;
-    }
-    footer h3{
-      text-align: center;
-    }
-    footer p{
-      font-size: larger;
-      text-align: center;
-    }
+  header p {
+    font-size: x-large;
   }
+  .aside-one , .aside-two{
+    text-align: center;
+    font-size: larger;
+  }
+  .aside-one ul, .aside-two ul{
+    margin-right: 40px;
+  }
+  .main-content p {
+    font-size: x-large;
+    margin: 30px 0;
+  }
+  footer h3{
+    text-align: center;
+  }
+  footer p{
+    font-size: larger;
+    text-align: center;
+  }
+  }
+
+@media screen and (min-width: 480px) {
+  header p {
+    font-size: x-large;
+  }
+  .aside-one , .aside-two{
+    text-align: center;
+    font-size: larger;
+  }
+  .aside-one ul, .aside-two ul{
+    margin-right: 40px;
+  }
+  .main-content p {
+    font-size: 21px;
+    margin: 25px 0;
+  }
+  footer h3{
+    text-align: small;
+  }
+  footer p{
+    font-size: smaller;
+  }
+}
