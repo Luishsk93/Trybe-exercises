@@ -4,3 +4,46 @@ html {
   *, *:before, *:after {
     box-sizing: inherit;
   }
+  body {
+    background-color: blanchedalmond;
+  }
+
+  header {
+    background-color: green;
+  }
+  header p {
+    color: white;
+    display: flex;
+    justify-content: center;
+  }
+  .aside-one h2, .aside-two h2, .main-content h1{
+    background-color: white;
+    text-align: center;
+  }
+  @media screen and (max-width: 600px) {
+    header ul{
+      display: none;
+    }
+    header p {
+      font-size: x-large;
+    }
+    .aside-one , .aside-two{
+      text-align: center;
+      list-style-type:none;
+      font-size: larger;
+    }
+    .aside-one ul, .aside-two ul{
+      list-style-type:none;
+    }
+    .main-content p {
+      font-size: x-large;
+      margin: 30px 0;
+    }
+    footer h3{
+      text-align: center;
+    }
+    footer p{
+      font-size: larger;
+      text-align: center;
+    }
+  }
