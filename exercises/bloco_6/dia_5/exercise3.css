@@ -95,3 +95,24 @@
         display: block;
       }
   }
+
+  @media screen and (max-width: 769px) {
+    #aside {
+      display: none;
+    }
+    body {
+      padding: 0;
+    }
+    img {
+      max-width: 100%;
+    }
+    #navigation ul {
+      display: flex;
+      flex-direction: column;
+      margin-top: 120px;
+    }
+    #header {
+      display: flex;
+      position: fixed;
+    }
+  }
