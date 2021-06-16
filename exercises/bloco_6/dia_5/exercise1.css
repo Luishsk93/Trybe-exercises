@@ -1,8 +1,9 @@
 body {
-
+  font-size: larger;
+  margin: 15px;
 }
 h1 {
-
+  font-size: smaller;
 }
 h2 {
 
@@ -13,5 +14,39 @@ img {
 }
 
 figure {
+    margin: 20px 0;
+}
+
+@media screen and (min-width:444px) {
+  body {
+    background-color:red;
+    font-size: 23px;
     margin: 0;
+  }
+  .figuras {
+    display: flex;
+    justify-content: space-around;
+  }
+  .coluna1 {
+    display: flex;
+    /* border: 2px solid salmon; */
+    flex-direction: column;
+  }
+  .coluna2 {
+    display: flex;
+    /* border: 2px solid salmon; */
+    flex-direction: column;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  body {
+    background-color:blue;
+    font-size: 20px;
+    margin: 0 6px;
+  }
+
+  p {
+    max-width: 97%;
+  }
 }
