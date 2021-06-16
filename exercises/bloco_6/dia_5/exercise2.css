@@ -58,11 +58,19 @@ header ul {
     font-size: larger;
     text-align: center;
   }
-  }
+}
 
 @media screen and (min-width: 480px) {
   header p {
     font-size: x-large;
+    display: flex;
+    flex-direction: column;
+  }
+  header nav {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    background-color: rgb(24, 201, 53);
   }
   .aside-one , .aside-two{
     text-align: center;
@@ -76,9 +84,30 @@ header ul {
     margin: 25px 0;
   }
   footer h3{
-    text-align: small;
+    font-size: small;
   }
   footer p{
     font-size: smaller;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  header p {
+    font-size: 40px;
+    margin-bottom: -3px;
+    padding: 10px 0;
+  }
+  header ul {
+    /* margin-top: -0px; */
+    margin-bottom: -5px;
+    padding-bottom: 20px;
+  }
+  .colunas {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 50px;
+  }
+  footer h3{
+    margin-top: 50px;
   }
 }
