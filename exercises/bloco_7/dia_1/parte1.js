@@ -23,5 +23,17 @@ testingScope(true);
 const oddsAndEvens = [13, 3, 4, 10, 7, 2];
 
 // Seu código aqui.
-
-console.log(oddsAndEvens);
+function ordenar() {
+  const clone = [13, 3, 4, 10, 7, 2];
+  for (let i = 0; i < oddsAndEvens.length; i += 1) {
+    let posicao = 0;
+    for (let j = 0; j < oddsAndEvens.length; j += 1) {
+      if (oddsAndEvens[i] > oddsAndEvens[j]) {
+        posicao = posicao + 1;
+      }
+    }
+    clone[posicao] = oddsAndEvens[i];
+  }
+  return clone;
+}
+console.log(`Os numeros ${ordenar()[0]}, ${ordenar()[1]}, ${ordenar()[2]}, ${ordenar()[3]}, ${ordenar()[4]}, ${ordenar()[5]} se encontram ordenados de forma crescente!`)
