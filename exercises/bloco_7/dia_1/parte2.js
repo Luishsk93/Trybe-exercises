@@ -14,3 +14,18 @@ const fazerFatorial = (n) => {
     }
     return fatorial;
 }
+
+// Crie uma função que receba uma frase e retorne qual a maior palavra.
+
+const retornarMaiorPalavra = (frase) => {
+  let listaPalavras = frase.split(" ");
+  let maiorPalavra = '';
+  for (palavra of listaPalavras) {
+    if (palavra.length > maiorPalavra.length) {
+      maiorPalavra = palavra;
+    }
+  }
+  return maiorPalavra;
+}
+
+console.log(retornarMaiorPalavra('Antônio foi no banheiro e não sabemos o que aconteceu'))
