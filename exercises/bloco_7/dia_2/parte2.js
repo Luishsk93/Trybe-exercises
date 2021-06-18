@@ -17,3 +17,13 @@ const lesson1 = {
     professor: 'Maria Clara',
     turno: 'noite',
   };
+
+  const adicionarTurno = (objeto, chave, valor) => {
+    const turno = {
+    };
+    turno[chave] = valor;
+    Object.assign(objeto,turno);
+  }
+
+  adicionarTurno(lesson2, 'turno', 'manhã');
+  console.log(lesson2);
