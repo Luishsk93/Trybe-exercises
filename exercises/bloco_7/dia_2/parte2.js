@@ -26,16 +26,31 @@ const adicionarTurno = (objeto, chave, valor) => {
 }
 
 adicionarTurno(lesson2, 'turno', 'manhã');
-console.log(lesson2);
+// console.log(lesson2);
 
 const listarChaves = (objeto) => { console.log(`${Object.keys(objeto)}`) }
 
-listarChaves(lesson3);
+// listarChaves(lesson3);
 
 const mostrarTamanho = (objeto) => { console.log(`${Object.keys(objeto).length}`) }
 
-mostrarTamanho(lesson1);
+// mostrarTamanho(lesson1);
 
 const listarValores = (objeto) => { console.log(`${Object.values(objeto)}`) }
 
-listarValores(lesson1)
+// listarValores(lesson1);
+const licao1 = {
+  lesson1: ''
+}
+licao1.lesson1 = lesson1;
+const licao2 = {
+  lesson2: ''
+}
+licao2.lesson2 = lesson2;
+const licao3 = {
+  lesson3: ''
+}
+licao3.lesson3 = lesson3;
+
+const allLessons = Object.assign({},  licao1, licao2, licao3)
+console.log(allLessons);
