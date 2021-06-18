@@ -42,19 +42,27 @@ const listarValores = (objeto) => { console.log(`${Object.values(objeto)}`) }
 const licao1 = {
   lesson1: ''
 }
+
 licao1.lesson1 = lesson1;
 const licao2 = {
   lesson2: ''
 }
+
 licao2.lesson2 = lesson2;
 const licao3 = {
   lesson3: ''
 }
+
 licao3.lesson3 = lesson3;
 
-const allLessons = Object.assign({},  licao1, licao2, licao3)
+const allLessons = Object.assign({},  licao1, licao2, licao3);
+
 console.log(allLessons);
 
 const contarNumeroEstudantes = (objeto) => {console.log(`${objeto.lesson1.numeroEstudantes + objeto.lesson2.numeroEstudantes + objeto.lesson3.numeroEstudantes}`)}
 
 contarNumeroEstudantes(allLessons);
+
+const pegarValorPeloNumero = (objeto, n) => {console.log(`${Object.values(objeto)[n]}`)};
+
+pegarValorPeloNumero(lesson1, 0);
