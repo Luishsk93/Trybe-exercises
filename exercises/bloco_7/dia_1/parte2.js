@@ -54,10 +54,22 @@ console.log(substituirPalavra('hyung'))
 
 // Um array com escopo global, que é o escopo do arquivo JS , nesse caso, contendo cinco strings com suas principais skills .
 
-
+var Habilidades = ['Capacidade analitica', 'Machine Learning', 'Python', 'HTML', 'JavaScript'];
 
 // Função 2 : Escreva uma função que vai receber a string retornada da Função 1 como parâmetro. Essa função deve concatenar as skills do array global à string que foi passada para a Função 2 via parâmetro. Você deve ordenar os skills em ordem alfabética. Sua função deve retornar essa nova string .
 // Exemplo: "Tryber x aqui! Minhas cinco principais habilidades são:
 // JavaScript;
 // HTML; ... #goTrybe".
 
+const concatenarStrings = (nomeTryber) => {
+  Habilidades.sort();
+  let concatenar = `${nomeTryber} Minhas cinco principais habilidades sao:
+  ${Habilidades[0]}
+  ${Habilidades[1]}
+  ${Habilidades[2]}
+  ${Habilidades[3]}
+  ${Habilidades[4]}`;
+  return concatenar
+}
+
+console.log(concatenarStrings(substituirPalavra('Hyung')))
