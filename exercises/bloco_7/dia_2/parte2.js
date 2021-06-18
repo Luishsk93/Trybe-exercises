@@ -54,3 +54,7 @@ licao3.lesson3 = lesson3;
 
 const allLessons = Object.assign({},  licao1, licao2, licao3)
 console.log(allLessons);
+
+const contarNumeroEstudantes = (objeto) => {console.log(`${objeto.lesson1.numeroEstudantes + objeto.lesson2.numeroEstudantes + objeto.lesson3.numeroEstudantes}`)}
+
+contarNumeroEstudantes(allLessons);
