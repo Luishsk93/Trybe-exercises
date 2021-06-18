@@ -27,3 +27,9 @@ const lesson1 = {
 
   adicionarTurno(lesson2, 'turno', 'manhã');
   console.log(lesson2);
+
+  const listarChaves = (objeto) => {
+    console.log(`${Object.keys(objeto)}`)
+  }
+
+  listarChaves(lesson3);
