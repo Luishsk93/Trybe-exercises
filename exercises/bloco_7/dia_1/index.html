@@ -1,3 +1,7 @@
+<!-- // Crie uma página que contenha:
+// Um botão ao qual será associado um event listener ;
+// Uma variável clickCount no arquivo JavaScript que acumule o número de clicks no botão;
+// Um campo no HTML que vá atualizando a quantidade de clicks no botão conforme a variável clickCount é atualizada. -->
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -9,5 +13,13 @@
   <button id="botao">Botao</button>
   <p></p>
 </body>
-<script src="parte2.js"></script>
+<script>
+    const botao = document.getElementById('botao');
+    let clickCount = 0;
+    const p = document.getElementsByTagName('p')[0];
+    botao.addEventListener('click', (event) => {
+    clickCount += 1;
+    p.innerText = clickCount;
+})
+</script>
 </html>
