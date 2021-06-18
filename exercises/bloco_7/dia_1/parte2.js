@@ -28,4 +28,18 @@ const retornarMaiorPalavra = (frase) => {
   return maiorPalavra;
 }
 
-console.log(retornarMaiorPalavra('Antônio foi no banheiro e não sabemos o que aconteceu'))
+console.log(retornarMaiorPalavra('Antônio foi no banheiro e não sabemos o que aconteceu'));
+
+// Crie uma página que contenha:
+// Um botão ao qual será associado um event listener ;
+// Uma variável clickCount no arquivo JavaScript que acumule o número de clicks no botão;
+// Um campo no HTML que vá atualizando a quantidade de clicks no botão conforme a variável clickCount é atualizada.
+
+const botao = document.getElementById('botao');
+let clickCount = 0;
+const p = document.getElementsByTagName('p')[0];
+botao.addEventListener('click', (event) => {
+  clickCount += 1;
+  p.innerText = clickCount;
+})
+
