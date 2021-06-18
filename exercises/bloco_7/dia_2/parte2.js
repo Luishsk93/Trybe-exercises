@@ -57,12 +57,27 @@ licao3.lesson3 = lesson3;
 
 const allLessons = Object.assign({},  licao1, licao2, licao3);
 
-console.log(allLessons);
+// console.log(allLessons);
 
 const contarNumeroEstudantes = (objeto) => {console.log(`${objeto.lesson1.numeroEstudantes + objeto.lesson2.numeroEstudantes + objeto.lesson3.numeroEstudantes}`)}
 
-contarNumeroEstudantes(allLessons);
+// contarNumeroEstudantes(allLessons);
 
 const pegarValorPeloNumero = (objeto, n) => {console.log(`${Object.values(objeto)[n]}`)};
 
-pegarValorPeloNumero(lesson1, 0);
+// pegarValorPeloNumero(lesson1, 0);
+
+const verificarPar = (objeto, chave, valor) => {
+  const listaDeChaves = Object.keys(objeto);
+  let par = false;
+  for (index in listaDeChaves) {
+    if (listaDeChaves[index] === chave) {
+      if (objeto[listaDeChaves[index]] === valor) {
+        par = true;
+      }
+    }
+  }
+  return par;
+}
+
+console.log(verificarPar(lesson3,'turno','noite'));
