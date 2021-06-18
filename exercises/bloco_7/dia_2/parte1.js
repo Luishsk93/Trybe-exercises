@@ -43,6 +43,9 @@ customerInfo(order);
 
 const orderModifier = (order) => {
   // Adicione abaixo as informações necessárias.
+  order.order.delivery.deliveryPerson = 'Luiz Silva';
+  order.payment = 50;
+  return console.log(`Ola ${order.order.delivery.deliveryPerson}, total do seu pedido de ${Object.keys(order.order.pizza)[0]}, ${Object.keys(order.order.pizza)[1]} e ${Object.keys(order.order.drinks)[0]} é R$ ${order.payment},00`)
 
 }
 
