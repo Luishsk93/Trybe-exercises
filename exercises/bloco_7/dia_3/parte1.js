@@ -41,7 +41,7 @@ function myRemove(arr, item) {
 // assert.deepStrictEqual(myRemove([1, 2, 3, 4]), [1, 2, 3, 4]);
 // assert.deepStrictEqual(myRemove([1, 2, 3, 4], 5), [1, 2, 3, 4]);
 
-// A função myRemoveWithoutCopy(arr, item) recebe um array arr e retorna o próprio array sem o elemento item caso ele exista no array
+// 3. A função myRemoveWithoutCopy(arr, item) recebe um array arr e retorna o próprio array sem o elemento item caso ele exista no array
 // Verifique se a chamada myRemoveWithoutCopy([1, 2, 3, 4], 3) retorna o array esperado
 // Verifique se a chamada myRemoveWithoutCopy([1, 2, 3, 4], 3) não retorna o array [1, 2, 3, 4]
 // Faça uma chamada para a função myRemoveWithoutCopy e verifique se o array passado por parâmetro sofreu alterações
@@ -65,7 +65,7 @@ function myRemoveWithoutCopy(arr, item) {
 // assert.deepStrictEqual(myRemoveWithoutCopy([1, 2, 3, 4]), [1, 2, 3, 4]);
 // assert.deepStrictEqual(myRemoveWithoutCopy([1, 2, 3, 4], 5), [1, 2, 3, 4]);
 
-// A função myFizzBuzz(num) recebe um número num e retorna "fizzbuzz" se o número for divisível por 3 e 5 , retorna "fizz" se for divisível apenas por 3 , retorna "buzz" se divisível apenas por 5 , retorna o próprio número caso não seja divisível por 3 ou 5 e retorna false caso num não seja um número
+// 4. A função myFizzBuzz(num) recebe um número num e retorna "fizzbuzz" se o número for divisível por 3 e 5 , retorna "fizz" se for divisível apenas por 3 , retorna "buzz" se divisível apenas por 5 , retorna o próprio número caso não seja divisível por 3 ou 5 e retorna false caso num não seja um número
 // Faça uma chamada com um número divisível por 3 e 5 e verifique se o retorno é o esperado
 // Faça uma chamada com um número divisível por 3 e verifique se o retorno é o esperado
 // Faça uma chamada com um número divisível por 5 e verifique se o retorno é o esperado
@@ -86,3 +86,25 @@ assert.strictEqual(myFizzBuzz(6), 'fizz');
 assert.strictEqual(myFizzBuzz(10), 'buzz');
 assert.strictEqual(myFizzBuzz(16), 16);
 assert.strictEqual(myFizzBuzz('15'), false);
+
+// 5. Compare dois objetos para verificar se são idênticos ou não
+
+const obj1 = {
+  title: 'My Title',
+  description: 'My Description',
+};
+
+const obj2 = {
+  description: 'My Description',
+  title: 'My Title',
+};
+
+const obj3 = {
+  title: 'My Different Title',
+  description: 'My Description',
+};
+
+// implemente seus testes aqui
+assert.deepStrictEqual(obj1, obj2);
+assert.deepStrictEqual(obj1, obj3);
+assert.deepStrictEqual(obj2, obj3);
