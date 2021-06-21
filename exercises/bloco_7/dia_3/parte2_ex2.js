@@ -1,4 +1,4 @@
-// Escreva a função wordLengths para passar nos testes já implementados.
+// Escreva a função wordLengths para passar nos testes já implementados
 
 const assert = require('assert');
 // escreva a função wordLengths aqui
