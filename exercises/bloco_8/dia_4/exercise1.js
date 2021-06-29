@@ -11,7 +11,7 @@ const arrays = [
 
 function flatten(arrays) {
   // escreva seu código aqui
-  return arrays.reduce((accumulator, currentValue, currentIndex, arr) => {
+  return arrays.reduce((accumulator, currentValue) => {
     for (let i = 0; i < currentValue.length; i += 1) {
       accumulator.push(currentValue[i]);
     }
