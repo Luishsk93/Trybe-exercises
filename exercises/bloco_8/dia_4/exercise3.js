@@ -70,6 +70,9 @@ const expectedResult = 43;
 
 function averageAge() {
   // escreva seu código aqui
+  return books.reduce((total, currentValue, currentIndex, arr) => {
+    return Math.round(total + (currentValue.releaseYear - currentValue.author.birthYear) / arr.length);
+  }, 0)
 }
 
 assert.strictEqual(averageAge(), expectedResult);
