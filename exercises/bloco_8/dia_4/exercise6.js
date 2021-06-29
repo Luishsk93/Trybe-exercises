@@ -4,13 +4,21 @@ const assert = require('assert');
 
 // Adicione o código do exercício aqui:
 
-const assert = require('assert');
-
 const students = ['Pedro Henrique', 'Miguel', 'Maria Clara'];
 const grades = [[9, 8, 10, 7, 5], [10, 9, 9, 10, 8], [10, 7, 10, 8, 9]];
 
 function studentAverage() {
   // escreva seu código aqui
+  let averageGrades = grades.reduce((total, currentValue, currentIndex, arr) => {
+    let avgGrade = 0;
+    for (grade of currentValue) {
+      avgGrade += grade/currentValue.length
+    }
+    total.push(avgGrade);
+    return total;
+  }, []);
+  return students.map((student, index, arr) => ({ 'name': student, 'average': Number(averageGrades[index].toPrecision(2))}));
+
 }
 
 const expected = [
