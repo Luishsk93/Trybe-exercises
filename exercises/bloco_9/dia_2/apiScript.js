@@ -18,7 +18,15 @@ const fetchJoke = () => {
     .then(data => addJokeOnHtml(data));
 };
 
-
-
-
-window.onload = () => fetchJoke();
+const promise = new Promise((resolve, reject) => {
+  array = [];
+  for (let i = 0; i < 10; i += 1) {
+    array.push((Math.floor(Math.random() * 50) + 1) ** 2);
+  }
+  const sum = array.reduce((total, value) => total + value, 0);
+  if (sum < 8000) {
+    return resolve(sum);
+  } reject(sum)
+})
+.then(() => console.log('Promise resolvida'))
+.catch(() => console.log('Promise rejeitada'));
