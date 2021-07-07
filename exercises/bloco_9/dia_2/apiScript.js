@@ -30,6 +30,11 @@ const promise = new Promise((resolve, reject) => {
 })
 .then((sum) => {
   const newArray = [2, 3, 5, 10];
-  return console.log(newArray.map((n) => (sum/n).toFixed(2)));
+  const newArray2 = newArray.map((n) => parseFloat((sum/n).toFixed(2)));
+  console.log(newArray2)
+  return newArray2
 })
-.catch(() => console.log('Promise rejeitada'));
+.then((newArray2) => {
+  const newPromise = new Promise((resolve) => resolve (console.log(newArray2.reduce((total, value) => total + value), 0)));
+})
+.catch(() => console.log('É mais de oito mil! Essa promise deve estar quebrada!'));
