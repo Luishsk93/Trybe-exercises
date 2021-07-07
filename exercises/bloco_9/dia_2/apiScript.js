@@ -28,5 +28,8 @@ const promise = new Promise((resolve, reject) => {
     return resolve(sum);
   } reject(sum)
 })
-.then(() => console.log('Promise resolvida'))
+.then((sum) => {
+  const newArray = [2, 3, 5, 10];
+  return console.log(newArray.map((n) => (sum/n).toFixed(2)));
+})
 .catch(() => console.log('Promise rejeitada'));
