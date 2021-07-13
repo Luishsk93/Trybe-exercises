@@ -31,3 +31,35 @@ describe('A função myRemove(arr, item) recebe um array arr e retorna uma cópi
     })
 })
 
+describe('A função myRemoveWithoutCopy(arr, item) recebe um array arr e retorna o próprio array sem o elemento item caso ele exista no array', () => {
+    it('Verifique se a chamada myRemoveWithoutCopy([1, 2, 3, 4], 3) retorna o array esperado', () => {
+      expect(myRemoveWithoutCopy(originalArr, 3)).toEqual([1, 2, 4]);
+    })
+    it('Verifique se a chamada myRemoveWithoutCopy([1, 2, 3, 4], 3) não retorna o array [1, 2, 3, 4]', () => {
+      expect(myRemoveWithoutCopy(originalArr, 3)).not.toEqual([1, 2, 3, 4]);
+    })
+    it('Faça uma chamada para a função myRemoveWithoutCopy e verifique se o array passado por parâmetro sofreu alterações', () => {
+      expect(myRemoveWithoutCopy(originalArr)).toEqual(originalArr);
+    })
+    it('Verifique se a chamada myRemoveWithoutCopy([1, 2, 3, 4], 5) retorna o array esperado', () => {
+      expect(myRemoveWithoutCopy(originalArr, 5)).toEqual(originalArr);
+    })
+  })
+  
+  describe('A função myFizzBuzz(num) recebe um número num e retorna "fizzbuzz" se o número for divisível por 3 e 5 , retorna "fizz" se for divisível apenas por 3 , retorna "buzz" se divisível apenas por 5 , retorna o próprio número caso não seja divisível por 3 ou 5 e retorna false caso num não seja um número', () => {
+    it('Faça uma chamada com um número divisível por 3 e 5 e verifique se o retorno é o esperado', () => {
+      expect(myFizzBuzz(15)).toBe('fizzbuzz');
+    })
+    it('Faça uma chamada com um número divisível por 3 e verifique se o retorno é o esperado', () => {
+      expect(myFizzBuzz(9)).toBe('fizz');
+    })
+    it('Faça uma chamada com um número divisível por 5 e verifique se o retorno é o esperado', () => {
+      expect(myFizzBuzz(10)).toBe('buzz');
+    })
+    it('Faça uma chamada com um número que não é divisível por 3 ou 5 e verifique se o retorno é o esperado', () => {
+      expect(myFizzBuzz(4)).toBe(4);
+    })
+    it('Faça uma chamada com um parâmetro que não é um número e verifique se o retorno é o esperado', () => {
+      expect(myFizzBuzz('x')).toBe(false);
+    })
+  })
