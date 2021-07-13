@@ -63,3 +63,15 @@ describe('A função myRemoveWithoutCopy(arr, item) recebe um array arr e retorn
       expect(myFizzBuzz('x')).toBe(false);
     })
   })
+
+  describe('Compare dois objetos para verificar se são idênticos ou não', () => {
+    it('Compara obj1 com o obj2 e verifique se o retorno e esperado', () => {
+      expect(obj1).toEqual(obj2);
+    })
+    it('Compara obj1 com o obj3 e verifique se o retorno e esperado', () => {
+        expect(obj1).not.toEqual(obj3);
+    })
+    it('Compara obj2 com o obj3 e verifique se o retorno e esperado', () => {
+        expect(obj2).not.toEqual(obj3);
+    })
+  })
