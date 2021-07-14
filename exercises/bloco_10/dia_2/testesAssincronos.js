@@ -52,4 +52,19 @@ const getAnimal = (name) => (
 );
 
 // ---------------------
-module.exports = { uppercase, findUserById, getUserName, getRepos, getAnimal };
+
+const findAnimalsByAge = (age) => (
+  new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const arrayAnimals = Animals.filter((animal) => animal.age === age);
+      if (arrayAnimals.length !== 0) {
+        return resolve(arrayAnimals);
+      };
+
+      return reject('Não possui animal com essa idade.');
+    }, 100);
+  })
+);
+
+// ---------------------
+module.exports = { uppercase, findUserById, getUserName, getRepos, getAnimal, findAnimalsByAge };
