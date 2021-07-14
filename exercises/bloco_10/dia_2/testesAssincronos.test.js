@@ -1,4 +1,4 @@
-const { uppercase, findUserById, getUserName, getRepos, fetch } = require('./testesAssincronos');
+const { uppercase, findUserById, getUserName, getRepos } = require('./testesAssincronos');
 
 test('Ao chamar a função uppercase,', () => {
   uppercase('abacaxi', (result) => {
@@ -30,3 +30,11 @@ describe('Testando com async/await', () => {
     });
   });
 });
+
+describe('Ao chamar a funcao getRepos,', () => {
+  it('verifique que os repositórios "sd-01-week4-5-project-todo-list" e "sd-01-week4-5-project-meme-generator" se encontram nessa lista', async () => {
+    const repositories = await getRepos('https://api.github.com/orgs/tryber/repos');
+    expect(repositories).toContain('sd-01-week4-5-project-todo-list');
+    expect(repositories).toContain('sd-01-week4-5-project-meme-generator');
+  });
+})
