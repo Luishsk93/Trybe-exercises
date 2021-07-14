@@ -6,7 +6,7 @@ const users = {
   4: { name: 'Mark' },
   5: { name: 'Paul' }
 };
-  
+// ---------------------
 const findUserById = (id) => {
   return new Promise((resolve, reject) => {
     if (users[id]) {
@@ -20,7 +20,7 @@ const findUserById = (id) => {
 const getUserName = (userID) => {
   return findUserById(userID).then(user => user.name);
 };
-
+// ---------------------
 const fetch = require('node-fetch');
 
 const getRepos = (url) => {
@@ -30,5 +30,26 @@ const getRepos = (url) => {
       return data.map((repo) => repo.name);
     });
 };
+// ---------------------
+const Animals = [
+  { name: 'Dorminhoco', age: 1, type: 'Dog' },
+  { name: 'Soneca', age: 2, type: 'Dog' },
+  { name: 'Preguiça', age: 5, type: 'Cat' },
+];
 
-module.exports = { uppercase, findUserById, getUserName, getRepos };
+const getAnimal = (name) => (
+  // Adicione o código aqui.
+  new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const animal = Animals.find((animal) => animal.name === name);
+      if (animal) {
+        return resolve(animal);
+      };
+
+      return reject('Nenhum animal com esse nome!');
+    }, 100);
+  })
+);
+
+// ---------------------
+module.exports = { uppercase, findUserById, getUserName, getRepos, getAnimal };

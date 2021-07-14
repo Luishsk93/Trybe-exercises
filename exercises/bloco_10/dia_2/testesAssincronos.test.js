@@ -1,4 +1,4 @@
-const { uppercase, findUserById, getUserName, getRepos } = require('./testesAssincronos');
+const { uppercase, findUserById, getUserName, getRepos, getAnimal } = require('./testesAssincronos');
 
 test('Ao chamar a função uppercase,', () => {
   uppercase('abacaxi', (result) => {
@@ -6,6 +6,7 @@ test('Ao chamar a função uppercase,', () => {
   })
 });
 
+// ---------------------
 describe('Ao chamar a funcao findUserById,', () => {
   it('verifica se o usuario foi encontrado', () => {
     return expect(getUserName(4)).resolves.toEqual('Mark');
@@ -15,6 +16,7 @@ describe('Ao chamar a funcao findUserById,', () => {
   });
 });
 
+// ---------------------
 describe('Testando com async/await', () => {
   describe('Ao chamar a funcao findUserById,', () => {
     it('verifica se o usuario foi encontrado', async () => {
@@ -31,6 +33,7 @@ describe('Testando com async/await', () => {
   });
 });
 
+// ---------------------
 describe('Ao chamar a funcao getRepos,', () => {
   it('verifique que os repositórios "sd-01-week4-5-project-todo-list" e "sd-01-week4-5-project-meme-generator" se encontram nessa lista', async () => {
     const repositories = await getRepos('https://api.github.com/orgs/tryber/repos');
@@ -38,3 +41,26 @@ describe('Ao chamar a funcao getRepos,', () => {
     expect(repositories).toContain('sd-01-week4-5-project-meme-generator');
   });
 })
+
+// ---------------------
+describe('Testando promise - findAnimalByName', () => {
+    describe('Quando existe o animal com o nome procurado', () => {
+      test('Retorne o objeto do animal', () => {
+        expect.assertions(1);
+        return getAnimal('Dorminhoco').then(animal => {
+          expect(animal).toEqual({ name: 'Dorminhoco', age: 1, type: 'Dog' });
+        });
+      });
+    });
+  
+    describe('Quando não existe o animal com o nome procurado', () => {
+      test('Retorna um erro', () => {
+        expect.assertions(1);
+        return getAnimal('Bob').catch(error =>
+          expect(error).toEqual('Nenhum animal com esse nome!')
+        );
+      });
+    });
+  });
+
+  // ---------------------
