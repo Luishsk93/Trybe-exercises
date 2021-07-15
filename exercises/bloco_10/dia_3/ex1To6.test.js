@@ -1,3 +1,4 @@
+
 const ex1To6 = require('./ex1To6');
 jest.mock('./ex1To6');
 
@@ -44,4 +45,13 @@ test('Ao restaurar a implementacao do strToUppercase, verifica o seu retorno.', 
   ex1To6.strToUppercase.mockRestore();
   ex1To6.strToUppercase.mockImplementation((str) => str.toUpperCase());
   expect(ex1To6.strToUppercase('a')).toBe('A');
+});
+
+describe('Ao chamar a funcao docPicturesApiRequisition,', () => {
+  it('verifique se a requisicao se resolveu', async () => {
+    await expect(ex1To6.docPicturesApiRequisition('https://dog.ceo/api/breeds/image/random')).resolves
+  })
+  it('verifique se a requisicao foi rejeitada', async () => {
+    await expect(ex1To6.docPicturesApiRequisition('https://dog.ceo/api/breeds/image/randomSADFA')).rejects
+  })
 })
