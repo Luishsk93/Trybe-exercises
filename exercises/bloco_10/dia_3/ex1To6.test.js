@@ -16,5 +16,10 @@ describe('Ao chamar a funcao randomNumber,', () => {
     expect(ex1To6.randomNumber(4,2)).toBe(2);
     expect(ex1To6.randomNumber).toBeCalledTimes(1);
   })
-  
+  it('Teste os retorno das primeira  e segunda implementacao,', () => {
+    ex1To6.randomNumber.mockImplementation((a, b, c) => a * b * c);
+    expect(ex1To6.randomNumber(4,2,1)).toBe(8);
+    ex1To6.randomNumber.mockImplementation((a) => a * 2);
+    expect(ex1To6.randomNumber(1)).toBe(2);
+  })
 })
