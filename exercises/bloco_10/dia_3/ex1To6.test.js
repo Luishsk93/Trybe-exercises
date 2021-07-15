@@ -1,4 +1,3 @@
-const { expect } = require('@jest/globals');
 const ex1To6 = require('./ex1To6');
 jest.mock('./ex1To6');
 
@@ -24,17 +23,25 @@ describe('Ao chamar a funcao randomNumber,', () => {
   });
 });
 
-describe('Ao chamar a funcao , firstLetter ou concatTwoLetters,', () => {
+describe('Ao implementar uma nova funcao para', () => {
   it ('strToUppercase, verifica se retorna a string em caixa baixa.', () => {
     ex1To6.strToUppercase.mockImplementation((str) => str.toLowerCase());
     expect(ex1To6.strToUppercase('ABC')).toBe('abc');
-  })
+  });
   it ('firstLetter, verifica se retorna a ultima letra da string.', () => {
     ex1To6.firstLetter.mockImplementation((str) => str[str.length - 1]);
     expect(ex1To6.firstLetter('ABC')).toBe('C');
-  })
+  });
   it ('concatTwoLetters, verifica se retorna a concatenacao de tres letras.', () => {
     ex1To6.concatTwoLetters.mockImplementation((str1, str2, str3) => str1 + str2 +str3);
     expect(ex1To6.concatTwoLetters('A','B','C')).toBe('ABC');
-  })
+  });
+});
+
+test('Ao restaurar a implementacao do strToUppercase, verifica o seu retorno.', () => {
+  ex1To6.strToUppercase.mockImplementation((str) => str.toLowerCase());
+  expect(ex1To6.strToUppercase('ABC')).toBe('abc');
+  ex1To6.strToUppercase.mockRestore();
+  ex1To6.strToUppercase.mockImplementation((str) => str.toUpperCase());
+  expect(ex1To6.strToUppercase('a')).toBe('A');
 })
