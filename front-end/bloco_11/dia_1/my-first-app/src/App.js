@@ -1,8 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
 
-function App() {
+const appointments = ['terapia', 'hh', 'bootcamp'];
+const Task = (value) => {
+  return (
+    <li>{value}</li>
+  );
+}
 
+function App() {
+  return (
+    appointments.map((appointment) => Task(appointment))
+  )
 }
 
 export default App;
