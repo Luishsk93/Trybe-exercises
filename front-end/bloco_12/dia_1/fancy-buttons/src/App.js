@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-
+// Usei como referencia esse site (https://upmostly.com/tutorials/changing-the-background-color-in-react) para colocar estilo no React
 let isBackgroundGreen1 = false;
 let isBackgroundGreen2 = false;
 let isBackgroundGreen3 = false;
